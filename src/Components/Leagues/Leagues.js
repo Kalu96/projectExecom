@@ -5,46 +5,45 @@ import { BrowserRouter, Router, Route, Link, Switch } from "react-router-dom";
 
 class League extends React.Component {
     state = {
-        list_of_leagues: [],
-        list_of_detail_leagues: [],
-        id_league: 0
+        listOfLeagues: [],
+        listOfDetailLeagues: [],
+        idLeague: 0
       };
     
       componentDidMount() {
         axios
-          .get(`https://www.thesportsdb.com/api/v1/json/1/all_leagues.php`)
+          .get('https://www.thesportsdb.com/api/v1/json/1/all_leagues.php')
           .then(res => {
-            console.log("ovo:", res);
-            this.setState({ list_of_leagues: res.data.leagues });
+            console.log("this:", res);
+            this.setState({ listOfLeagues: res.data.leagues });
           })
           .catch(err => console.log(err));
     
         axios
           .get(
-            `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=` +
-              this.state.id_league
+            `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id= ${this.state.idLeague}`            
           )
           .then(res => {
-            console.log("ovo:", res);
-            this.setState({ list_of_detail_leagues: res.data.leagues });
+            console.log("this:", res);
+            this.setState({ listOfDetailLeagues: res.data.leagues });
           })
           .catch(err => console.log(err));
       }
     
-      //=================================================================================
-      filterLeaguesList = list => {
-        const filterLeague = list.filter(league => league.strSport == "Soccer");
+      
+      soccerLeagues = list => {
+        const filterLeague = list.filter(league => league.strSport === "Soccer");
     
         return filterLeague.map(league => (
           <li key={league.idLeague}>{league.strLeague}</li>
         ));
       };
-      //=================================================================================
-      listOfLeagueId = list => {
-        const filterLeague = list.filter(league => league.strSport == "Soccer");
+      
+      leaguesIds = list => {
+        const filterLeague = list.filter(league => league.strSport === "Soccer");
     
         return (
-          <select value={this.state.id_league} onChange={this.onDropdownSelected}>
+          <select value={this.state.idLeague} onChange={this.onDropdownSelected}>
             <option value="" />
             {filterLeague.map((id, i) => (
               <option key={i} value={id.idLeague}>
@@ -55,29 +54,23 @@ class League extends React.Component {
         );
       };
     
-      //=================================================================================
+      
       onDropdownSelected = e => {
-        console.log("THE VAL", e.target.value);
         this.setState({
-          id_league: e.target.value
+          idLeague: e.target.value
         });
-        console.log("id_league: ", this.state.id_league); //this variable is late by one choose
+        console.log("idLeague: ", this.state.idLeague); //this variable is late by one choose
       };
-      //=================================================================================
+      
       render() {
-        const { list_of_leagues, list_of_detail_leagues, id_league } = this.state;
+        const { listOfLeagues, listOfDetailLeagues, idLeague } = this.state;
     
         return (
           <div>
-            {/* <BrowserRouter>
-              <div>
-                <Link to="/Leagues">Leagues</Link>
-                <Route exact path="/Leagues" component={League}  />
-              </div>
-            </BrowserRouter> */}
-            <div>{this.filterLeaguesList(list_of_leagues)}</div>
+            
+            <div>{this.soccerLeagues(listOfLeagues)}</div>
     
-            {/* <div>{this.listOfLeagueId(list_of_leagues)}</div> */}
+           
           </div>
         );
       }

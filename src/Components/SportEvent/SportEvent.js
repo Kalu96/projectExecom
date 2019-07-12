@@ -9,10 +9,10 @@ class SportEvent extends React.Component {
   componentDidMount() {
     axios
       .get(
-        `https://www.thesportsdb.com/api/v1/json/1/lookupevent.php?id=441613`
+        'https://www.thesportsdb.com/api/v1/json/1/lookupevent.php?id=441613'
       )
       .then(res => {
-        console.log("ovo:", res);
+        console.log("this:", res);
         this.setState({ eventInfo: res.data.events });
       })
       .catch(err => console.log(err));
