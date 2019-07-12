@@ -12,7 +12,6 @@ class Schedule extends React.Component {
         'https://www.thesportsdb.com/api/v1/json/1/eventsnext.php?id=133602' //event by team ID
       )
       .then(res => {
-        console.log("this:", res);
         this.setState({ nextFiveTeam: res.data.events });
       })
       .catch(err => console.log(err));

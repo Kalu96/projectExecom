@@ -12,7 +12,6 @@ class SportEvent extends React.Component {
         'https://www.thesportsdb.com/api/v1/json/1/lookupevent.php?id=441613'
       )
       .then(res => {
-        console.log("this:", res);
         this.setState({ eventInfo: res.data.events });
       })
       .catch(err => console.log(err));
