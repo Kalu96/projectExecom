@@ -27,6 +27,7 @@ class Schedule extends React.Component {
   };
   render() {
     const { nextFiveTeam } = this.state;
+    
     return <div>{this.printNextFiveEventsForTeam(nextFiveTeam)}</div>;
   }
 }

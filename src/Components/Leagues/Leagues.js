@@ -40,19 +40,16 @@ class League extends React.Component {
   onDropdownSelected = e => {
     this.setState({
       idLeague: e.target.value
-    }, () => {
-      console.log("idLeague: ", this.state.idLeague);
     });
-    console.log("idLeague: ", this.state.idLeague);
   };
 
   render() {
-    const { listOfLeagues, listOfDetailLeagues, idLeague } = this.state;
+    const { listOfLeagues} = this.state;
 
     return (
-      <div>
+      
         <div>{this.soccerLeagues(listOfLeagues)}</div>
-      </div>
+
     );
   }
 }
