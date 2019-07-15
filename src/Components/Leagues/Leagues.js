@@ -1,8 +1,10 @@
 import React from "react";
 import axios from "axios";
 import { BrowserRouter, Router, Route, Link, Switch } from "react-router-dom";
+import League from "./League";
+import "./League.css";
 
-class League extends React.Component {
+class Leagues extends React.Component {
   state = {
     listOfLeagues: [],
     listOfDetailLeagues: [],
@@ -10,6 +12,10 @@ class League extends React.Component {
   };
 
   componentDidMount() {
+    const {
+      match: { params }
+    } = this.props;
+
     axios
       .get("https://www.thesportsdb.com/api/v1/json/1/all_leagues.php")
       .then(res => {
@@ -20,7 +26,7 @@ class League extends React.Component {
     axios
       .get(
         `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id= ${
-          this.state.idLeague
+          params.id
         }`
       )
       .then(res => {
@@ -30,28 +36,17 @@ class League extends React.Component {
   }
 
   soccerLeagues = list => {
-    const filterLeague = list.filter(league => league.strSport === "Soccer");
+    const filterLeague = list.filter(league => league.strSport === "Soccer").filter(league => league.idLeague !== "4367").filter(league => league.idLeague !== "4519");
+    // 4367 and 4519 are ID-s from some undefined teams
 
-    return filterLeague.map(league => (
-      <li key={league.idLeague}>{league.strLeague}</li>
-    ));
-  };
-
-  onDropdownSelected = e => {
-    this.setState({
-      idLeague: e.target.value
-    });
+    return filterLeague.map(league => <League league={league} />);
   };
 
   render() {
-    const { listOfLeagues} = this.state;
+    const { listOfLeagues } = this.state;
 
-    return (
-      
-        <div>{this.soccerLeagues(listOfLeagues)}</div>
-
-    );
+    return <ul className="league-list">{this.soccerLeagues(listOfLeagues)}</ul>;
   }
 }
 
-export default League;
+export default Leagues;

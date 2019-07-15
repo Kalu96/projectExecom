@@ -1,0 +1,11 @@
+.team-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: row;
+}
+
+.team-item {
+    width: 200px;
+    height: 200px;
+    list-style: none;
+}

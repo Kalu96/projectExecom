@@ -1,19 +1,30 @@
 import React from "react";
+import "./Player.css";
+import { NavLink, withRouter } from "react-router-dom";
 
 class Player extends React.Component {
   render() {
     const { player } = this.props;
 
     return (
-      <li key={player.idPlayer}>
-        ID: {player.idPlayer}
+      <li className="player-item" key={player.idPlayer}>
         <br />
-        Name: {player.strPlayer}
+
+        <NavLink
+          className="nav-link"
+          exact
+          to={`/OnePlayerInfo/${player.idPlayer}`}
+        >
+          {player.strPlayer}
+        </NavLink>
         <br />
-        Position: {player.strPosition}
+        <img src={player.strThumb} height="100px" width="100px" />
+        <br />
+        <br />
+        <br />
       </li>
     );
   }
 }
 
-export default Player;
+export default withRouter(Player);

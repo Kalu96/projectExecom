@@ -1,0 +1,11 @@
+.league-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: row;
+}
+
+.league-item {
+    width: 200px;
+    height: 200px;
+    list-style: none;
+}

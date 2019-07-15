@@ -1,0 +1,12 @@
+.player-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: row;
+}
+
+li.player-item {
+    width: 200px;
+    height: 200px;
+    list-style: none;
+    color: red;
+}
