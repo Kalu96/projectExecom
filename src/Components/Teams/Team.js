@@ -4,17 +4,17 @@ import "./Team.css";
 
 class Team extends React.Component {
   render() {
-    const { team } = this.props;
+    const { team: {idTeam, strTeam, strTeamBadge} } = this.props;
 
     return (
-      <li className="team-item" key={team.idTeam}>
-        ID: {team.idTeam}
+      <li className="team-item">
+        ID: {idTeam}
         <br />
-        <NavLink className="nav-link" exact to={`/PlayersInfo/${team.idTeam}`}>
-          {team.strTeam}
+        <NavLink className="nav-link" to={`/PlayersInfo/${idTeam}`}>
+          {strTeam}
         </NavLink>
         <br />
-        <img src={team.strTeamBadge} height="100px" width="100px" />
+        <img src={strTeamBadge} height="100px" width="100px" />
         <br />
         <br />
       </li>

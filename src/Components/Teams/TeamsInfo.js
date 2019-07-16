@@ -10,13 +10,13 @@ class TeamsInfo extends React.Component {
 
   componentDidMount() {
     const {
-      match: { params }
+      match: { params: {id}}
     } = this.props;
 
     axios
       .get(
         `https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${
-          params.id
+          id
         }`
       )
       .then(res => {
@@ -31,7 +31,7 @@ class TeamsInfo extends React.Component {
     return (
       <ul className="team-list">
         {teamsInfo.map(teams => (
-          <Team team={teams} />
+          <Team key={teams.idTeam} team={teams} />
         ))}
       </ul>
     );

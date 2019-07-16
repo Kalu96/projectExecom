@@ -9,19 +9,17 @@ class OneTeamInfo extends React.Component {
 
   componentDidMount() {
     const {
-      match: { params }
+      match: {
+        params: { id }
+      }
     } = this.props;
 
     axios
       .get(
-        `https://www.thesportsdb.com/api/v1/json/1/lookup_all_players.php?id=${
-          params.id
-        }`
+        `https://www.thesportsdb.com/api/v1/json/1/lookup_all_players.php?id=${id}`
       )
       .then(res => {
-        this.setState({ teamInfo: res.data.teams }, () =>
-          console.log("teamInfo: ", this.state.teamInfo)
-        );
+        this.setState({ teamInfo: res.data.teams });
       })
       .catch(err => console.log(err));
   }
@@ -31,7 +29,7 @@ class OneTeamInfo extends React.Component {
     return (
       <ul>
         {teamInfo.map(team => (
-          <Team team={team} />
+          <Team key={team.idTeam} team={team} />
         ))}
       </ul>
     );

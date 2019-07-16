@@ -13,7 +13,9 @@ class Leagues extends React.Component {
 
   componentDidMount() {
     const {
-      match: { params }
+      match: {
+        params: { id }
+      }
     } = this.props;
 
     axios
@@ -25,9 +27,7 @@ class Leagues extends React.Component {
 
     axios
       .get(
-        `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id= ${
-          params.id
-        }`
+        `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id= ${id}`
       )
       .then(res => {
         this.setState({ listOfDetailLeagues: res.data.leagues });
@@ -36,10 +36,17 @@ class Leagues extends React.Component {
   }
 
   soccerLeagues = list => {
-    const filterLeague = list.filter(league => league.strSport === "Soccer").filter(league => league.idLeague !== "4367").filter(league => league.idLeague !== "4519");
+    const filterLeague = list.filter(
+      league =>
+        league.strSport === "Soccer" &&
+        league.idLeague !== "4367" &&
+        league.idLeague !== "4519"
+    );
     // 4367 and 4519 are ID-s from some undefined teams
 
-    return filterLeague.map(league => <League league={league} />);
+    return filterLeague.map(league => (
+      <League key={league.idLeague} league={league} />
+    ));
   };
 
   render() {

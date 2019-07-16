@@ -11,43 +11,46 @@ class League extends React.Component {
   componentDidMount() {
     axios
       .get(
-        `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id= ${
+        `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=${
           this.props.league.idLeague
         }`
       )
       .then(res => {
-        this.setState({ leagueDetail: res.data.leagues[0] }, () => {});
+        this.setState({ leagueDetail: res.data.leagues[0] });
       })
       .catch(err => console.log(err));
   }
 
   render() {
-    const { league } = this.props;
-    const { leagueDetail } = this.state;
+    const { league: {idLeague, strLeague} } = this.props;
+    const { leagueDetail:{strBadge} } = this.state;
 
     return (
-      <li className="league-item" key={league.idLeague}>
-        <br />
-        ID: {league.idLeague}
+      <li className="league-item" >
+        <div>ID: {idLeague}</div>
+        <div>
+          <NavLink
+            className="nav-link"
+            exact
+            to={`/TeamsInfo/${idLeague}`}
+          >
+            {strLeague}
+          </NavLink>
+        </div>
         <NavLink
           className="nav-link"
           exact
-          to={`/TeamsInfo/${league.idLeague}`}
+          to={`/TeamsInfo/${idLeague}`}
         >
-          {league.strLeague}
+          <div>
+            <img
+              className="nav-link-img"
+              src={strBadge}
+              height="40px"
+              width="40px"
+            />
+          </div>
         </NavLink>
-        <br />
-        <br />
-        <NavLink
-          className="nav-link"
-          exact
-          to={`/TeamsInfo/${league.idLeague}`}
-        >
-          <img src={leagueDetail.strBadge} height="40px" width="40px" />
-        </NavLink>
-        
-        <br />
-        <br />
       </li>
     );
   }

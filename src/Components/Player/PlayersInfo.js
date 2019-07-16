@@ -10,35 +10,39 @@ class PlayersInfo extends React.Component {
 
   componentDidMount() {
     const {
-      match: { params }
+      match: {
+        params: { id }
+      }
     } = this.props;
 
     axios
       .get(
-        `https://www.thesportsdb.com/api/v1/json/1/lookup_all_players.php?id=${
-          params.id
-        }`
+        `https://www.thesportsdb.com/api/v1/json/1/lookup_all_players.php?id=${id}`
       )
       .then(res => {
-        this.setState({ playerInfo: res.data.player }, () =>
-          console.log("playerInfo: ", this.state.playerInfo)
-        );
+        this.setState({ playerInfo: res.data.player });
       })
       .catch(err => console.log(err));
   }
 
   printPlayers = list => {
-    const filterPlayers = list.filter(player => player.strPosition !== "Manager")
-    // const filterChoach
+    const filterPlayers = list.filter(
+      player => player.strPosition !== "Manager"
+    );
 
-    return filterPlayers.map(player =>  <Player player={player} />);
+    return filterPlayers.map(player => (
+      <Player key={player.idPlayer} player={player} />
+    ));
   };
 
   printManager = list => {
-    const filterPlayers = list.filter(player => player.strPosition === "Manager")
-    // const filterChoach
+    const filterPlayers = list.filter(
+      player => player.strPosition === "Manager"
+    );
 
-    return filterPlayers.map(player =>  <Player player={player} />);
+    return filterPlayers.map(player => (
+      <Player key={player.idPlayer} player={player} />
+    ));
   };
 
   render() {
@@ -46,18 +50,10 @@ class PlayersInfo extends React.Component {
 
     return (
       <div>
-      <ul className="player-list">
-        {/* {playerInfo.map(player => (
-          <Player player={player} />
-        ))} */}
-        {this.printPlayers(playerInfo)}
-       
-
-      </ul>
-      THIS IS MANAGER: <br />
-      {this.printManager(playerInfo)}
+        <ul className="player-list">{this.printPlayers(playerInfo)}</ul>
+        THIS IS MANAGER: <br />
+        {this.printManager(playerInfo)}
       </div>
-      
     );
   }
 }
