@@ -27,7 +27,7 @@ class Leagues extends React.Component {
 
     axios
       .get(
-        `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id= ${id}`
+        `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=${id}`
       )
       .then(res => {
         this.setState({ listOfDetailLeagues: res.data.leagues });

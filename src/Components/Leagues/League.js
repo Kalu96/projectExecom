@@ -22,26 +22,22 @@ class League extends React.Component {
   }
 
   render() {
-    const { league: {idLeague, strLeague} } = this.props;
-    const { leagueDetail:{strBadge} } = this.state;
+    const {
+      league: { idLeague, strLeague }
+    } = this.props;
+    const {
+      leagueDetail: { strBadge }
+    } = this.state;
 
     return (
-      <li className="league-item" >
+      <li className="league-item">
         <div>ID: {idLeague}</div>
         <div>
-          <NavLink
-            className="nav-link"
-            exact
-            to={`/TeamsInfo/${idLeague}`}
-          >
+          <NavLink className="nav-link" to={`/TeamsInfo/${idLeague}`}>
             {strLeague}
           </NavLink>
         </div>
-        <NavLink
-          className="nav-link"
-          exact
-          to={`/TeamsInfo/${idLeague}`}
-        >
+        <NavLink className="nav-link" to={`/TeamsInfo/${idLeague}`}>
           <div>
             <img
               className="nav-link-img"

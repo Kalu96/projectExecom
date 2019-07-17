@@ -14,7 +14,7 @@ import TeamsInfo from "./Components/Teams/TeamsInfo";
 import OneTeamInfo from "./Components/Teams/OneTeamInfo";
 import Leagues from "./Components/Leagues/Leagues";
 
-function App(props) {
+function App() {
   return (
     <div className="App">
       <BrowserRouter>
@@ -27,12 +27,7 @@ function App(props) {
             <Route path="/Player" component={Player} />
             <Route path="/SportEvent" component={SportEvent} />
             <Route path="/Schedule" component={Schedule} />
-            <Route
-              path="/PlayersInfo"
-              component={PlayersInfo}
-              exact
-              {...props}
-            />
+            <Route path="/PlayersInfo" component={PlayersInfo} exact />
             <Route path="/OnePlayerInfo" component={OnePlayerInfo} exact />
             <Route path="/TeamsInfo/:id" component={TeamsInfo} exact />
 

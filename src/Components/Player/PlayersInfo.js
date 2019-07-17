@@ -51,7 +51,8 @@ class PlayersInfo extends React.Component {
     return (
       <div>
         <ul className="player-list">{this.printPlayers(playerInfo)}</ul>
-        THIS IS MANAGER: <br />
+
+        <div>THIS IS MANAGER:</div>
         {this.printManager(playerInfo)}
       </div>
     );
