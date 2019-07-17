@@ -1,26 +1,23 @@
 import React from "react";
 import axios from "axios";
 import "./Navigation.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
     <div className="main-nav-link">
-      <NavLink className="nav-link" exact to="/Countries">
+      <Link className="nav-link"  to="/Countries">
         Countries
-      </NavLink>
-      <NavLink className="nav-link" exact to="/Leagues">
+      </Link>
+      <Link className="nav-link"  to="/Leagues">
         Leagues
-      </NavLink>
-      <NavLink className="nav-link" exact to="/PlayerInfo">
-        Player
-      </NavLink>
-      <NavLink className="nav-link" exact to="/SportEvent">
-        SportEvent
-      </NavLink>
-      <NavLink className="nav-link" exact to="/Schedule">
+      </Link>
+      <Link className="nav-link"  to="/SportEvent">
+        Sport-Event
+      </Link>
+      <Link className="nav-link"  to="/Schedule">
         Schedule
-      </NavLink>
+      </Link>
     </div>
   );
 };

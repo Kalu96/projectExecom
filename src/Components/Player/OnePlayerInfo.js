@@ -2,15 +2,21 @@ import React from "react";
 import axios from "axios";
 import Player from "./Player";
 
-class PlayerInfo extends React.Component {
+class OnePlayerInfo extends React.Component {
   state = {
     playerInfo: []
   };
 
   componentDidMount() {
+    const {
+      match: {
+        params: { id }
+      }
+    } = this.props;
+
     axios
       .get(
-        "https://www.thesportsdb.com/api/v1/json/1/lookupplayer.php?id=34145937"
+        `https://www.thesportsdb.com/api/v1/json/1/lookupplayer.php?id=${id}`
       )
       .then(res => {
         this.setState({ playerInfo: res.data.players });
@@ -23,11 +29,11 @@ class PlayerInfo extends React.Component {
     return (
       <ul>
         {playerInfo.map(player => (
-          <Player player={player} />
+          <Player key={player.idPlayer} player={player} />
         ))}
       </ul>
     );
   }
 }
 
-export default PlayerInfo;
+export default OnePlayerInfo;
