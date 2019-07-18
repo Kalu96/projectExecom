@@ -9,19 +9,21 @@ class Team extends React.Component {
     } = this.props;
 
     return (
-      <li className="team-item">
-        <div>ID: {idTeam}</div>
+      <NavLink className="nav-link" to={`/PlayersInfo/${idTeam}`}>
+        <li className="team-item">
+          <div>ID: {idTeam}</div>
 
-        <div>
-          <NavLink className="nav-link" to={`/PlayersInfo/${idTeam}`}>
-            {strTeam}
-          </NavLink>
-        </div>
+          <div>
+            <NavLink className="nav-link" to={`/PlayersInfo/${idTeam}`}>
+              {strTeam}
+            </NavLink>
+          </div>
 
-        <div>
-          <img src={strTeamBadge} height="100px" width="100px" />
-        </div>
-      </li>
+          <div>
+            <img src={strTeamBadge} height="100px" width="100px" />
+          </div>
+        </li>
+      </NavLink>
     );
   }
 }

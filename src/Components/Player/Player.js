@@ -9,17 +9,19 @@ class Player extends React.Component {
     } = this.props;
 
     return (
-      <li className="player-item">
-        <div>
-          <NavLink className="nav-link" to={`/OnePlayerInfo/${idPlayer}`}>
-            {strPlayer}
-          </NavLink>
-        </div>
+      <NavLink className="nav-link" to={`/OnePlayerInfo/${idPlayer}`}>
+        <li className="player-item">
+          <div>
+            <NavLink className="nav-link" to={`/OnePlayerInfo/${idPlayer}`}>
+              {strPlayer}
+            </NavLink>
+          </div>
 
-        <div>
-          <img src={strThumb} height="100px" width="100px" />
-        </div>
-      </li>
+          <div>
+            <img src={strThumb} height="100px" width="100px" />
+          </div>
+        </li>
+      </NavLink>
     );
   }
 }
