@@ -1,10 +1,15 @@
 import React from "react";
 import axios from "axios";
-import Player from "./Player";
+import { PlayerInfo } from "./PlayerInfo";
+import { axiosGet } from "./PlayerHelper";
 
 class OnePlayerInfo extends React.Component {
   state = {
-    playerInfo: []
+    playerInfo: null,
+    formerClubs: null,
+    contract: null,
+    honors: null,
+    isLoaded: false
   };
 
   componentDidMount() {
@@ -14,23 +19,39 @@ class OnePlayerInfo extends React.Component {
       }
     } = this.props;
 
-    axios
-      .get(
-        `https://www.thesportsdb.com/api/v1/json/1/lookupplayer.php?id=${id}`
-      )
-      .then(res => {
-        this.setState({ playerInfo: res.data.players });
-      })
-      .catch(err => console.log(err));
+    axios.all(axiosGet(id)).then(res => {
+      const playerInfo = res[0].data.players[0] || null;
+      const formerClubs = res[1].data.formerteams || null;
+      const contract = res[2].data.contracts ? res[2].data.contracts[0] : null;
+      const honors = res[3].data.honors || null;
+
+      this.setState({
+        playerInfo,
+        formerClubs,
+        contract,
+        honors,
+        isLoaded: true
+      });
+    });
   }
   render() {
-    const { playerInfo } = this.state;
+    const { playerInfo, formerClubs, contract, honors, isLoaded } = this.state;
 
+    if (!isLoaded) {
+      return "LOADING...";
+    }
     return (
       <ul>
-        {playerInfo.map(player => (
-          <Player key={player.idPlayer} player={player} />
-        ))}
+        <div>
+          {playerInfo && (
+            <PlayerInfo
+              player={playerInfo}
+              formerTeams={formerClubs}
+              contract={contract}
+              honors={honors}
+            />
+          )}
+        </div>
       </ul>
     );
   }

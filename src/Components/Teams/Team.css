@@ -2,10 +2,19 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: row;
+    border: 5px solid black;
+    margin: 0 5%;
 }
 
 .team-item {
     width: 200px;
     height: 200px;
     list-style: none;
+    border: 2.5px solid black;
+    margin-bottom: 5%;
+    background: linear-gradient( 180deg, rgba(0, 0, 0, 1) 0%, rgba(97, 97, 97, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.team-item:hover {
+    color: lightgray;
 }

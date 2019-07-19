@@ -2,11 +2,65 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: row;
+    border: 5px solid black;
+    margin: 0 5%;
 }
 
 li.player-item {
     width: 200px;
     height: 200px;
     list-style: none;
-    color: red;
+    border: 2.5px solid black;
+    margin-bottom: 5%;
+    background: linear-gradient( 180deg, rgba(0, 0, 0, 1) 0%, rgba(97, 97, 97, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+li.player-item:hover {
+    color: lightgray;
+}
+
+.main {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    margin: 0;
+    border-style: solid;
+}
+
+.col-1 {
+    background: #d7e8d4;
+    flex: 2;
+}
+
+.col-2 {
+    display: flex;
+    flex-direction: column;
+    flex: 6;
+}
+
+.tabList {
+    text-align: left;
+}
+
+.tabBio {
+    text-align: left;
+    font-size: 10pt;
+    text-align: justify;
+    margin: 0 3% 0;
+}
+
+.former-teams {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: row;
+}
+
+.former-items {
+    list-style: none;
+    margin: 1% 0 2% 42%;
+}
+
+.honors-items {
+    list-style: none;
+    margin: 2% 0 0;
 }

@@ -30,24 +30,22 @@ class League extends React.Component {
     } = this.state;
 
     return (
-      <li className="league-item">
-        <div>ID: {idLeague}</div>
-        <div>
+      <NavLink className="nav-link" to={`/TeamsInfo/${idLeague}`}>
+        <li className="league-item">
+          <div>ID: {idLeague}</div>
+          <div>{strLeague}</div>
           <NavLink className="nav-link" to={`/TeamsInfo/${idLeague}`}>
-            {strLeague}
+            <div>
+              <img
+                className="nav-link-img"
+                src={strBadge}
+                height="100px"
+                width="100px"
+              />
+            </div>
           </NavLink>
-        </div>
-        <NavLink className="nav-link" to={`/TeamsInfo/${idLeague}`}>
-          <div>
-            <img
-              className="nav-link-img"
-              src={strBadge}
-              height="40px"
-              width="40px"
-            />
-          </div>
-        </NavLink>
-      </li>
+        </li>
+      </NavLink>
     );
   }
 }
