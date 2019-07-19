@@ -30,11 +30,11 @@ class League extends React.Component {
     } = this.state;
 
     return (
-      <NavLink className="nav-link" exact to={`/TeamsInfo/${idLeague}`}>
+      <NavLink className="nav-link" to={`/TeamsInfo/${idLeague}`}>
         <li className="league-item">
           <div>ID: {idLeague}</div>
           <div>{strLeague}</div>
-          <NavLink className="nav-link" exact to={`/TeamsInfo/${idLeague}`}>
+          <NavLink className="nav-link" to={`/TeamsInfo/${idLeague}`}>
             <div>
               <img
                 className="nav-link-img"
