@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import PlayerInfo from "./PlayerInfo";
+import { PlayerInfo } from "./PlayerInfo";
 import { axiosGet } from "./PlayerHelper";
 
 class OnePlayerInfo extends React.Component {
@@ -46,7 +46,7 @@ class OnePlayerInfo extends React.Component {
           {playerInfo && (
             <PlayerInfo
               player={playerInfo}
-              formerTeam={formerClubs}
+              formerTeams={formerClubs}
               contract={contract}
               honors={honors}
             />

@@ -45,7 +45,8 @@ li.player-item:hover {
 .tabBio {
     text-align: left;
     font-size: 10pt;
-    margin: 0 5% 0 3%;
+    text-align: justify;
+    margin: 0 3% 0;
 }
 
 .former-teams {
@@ -61,5 +62,5 @@ li.player-item:hover {
 
 .honors-items {
     list-style: none;
-    margin: 1% 0 2% 0;
+    margin: 2% 0 0;
 }
