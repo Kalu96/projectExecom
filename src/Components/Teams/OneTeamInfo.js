@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { TeamInfo } from "./TeamInfo";
 import { axiosGet } from "./TeamHelper";
+import { Spinner } from "../Spinner/Spinner";
 
 class OneTeamInfo extends React.Component {
   state = {
@@ -44,7 +45,7 @@ class OneTeamInfo extends React.Component {
     } = this.state;
 
     if (!isLoaded) {
-      return "LOADING...";
+      return <Spinner />;
     }
     return (
       <ul>

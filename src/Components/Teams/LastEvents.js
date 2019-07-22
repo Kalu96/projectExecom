@@ -28,8 +28,8 @@ const LastEvents = props => {
               <div className="last-event-spectators">{`Spectators: ${item.intSpectators ||
                 "No details available"}`}</div>
               <div className="last-event-home-team">
-                <span className="home-team-span"> HOME TEAM LINE UP </span>
-
+                <span className="home-team-span"> HOME TEAM </span>
+                <span>LINE UP</span>
                 <div className="lineup">
                   <div>
                     {`${item.strHomeLineupGoalkeeper || "UNKNOWN VALUE"}`}
@@ -49,8 +49,8 @@ const LastEvents = props => {
                 <div> {`RED CARDS: ${item.strHomeRedCards || "-"} `}</div>
               </div>
               <div className="last-event-away-team">
-                <span className="away-team-span">AWAY TEAM LINE UP</span>
-
+                AWAY TEAM
+                <div>LINE UP</div>
                 <div className="lineup">
                   <div>
                     {`${item.strAwayLineupGoalkeeper || "UNKNOWN VALUE"} `}

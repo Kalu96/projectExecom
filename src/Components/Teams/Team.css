@@ -54,22 +54,13 @@ li.player-item:hover {
     color: lightgray;
 }
 
-.last-event-spectators {
-    margin-bottom: 2%;
-}
-
-.last-event-home-team {
-    margin-bottom: 2%;
-}
-
-.last-event-away-team {
+.last-event-spectators,
+.last-event-home-team,
+.last-event-away-team,
+.bench .home-team-span .away-team-span {
     margin-bottom: 2%;
 }
 
 .lineup {
     margin: 2% 0;
-}
-
-.bench {
-    margin-bottom: 2%;
 }

@@ -9,6 +9,7 @@ import Player from "../Player/Player";
 export const TeamInfo = props => {
   const {
     team: {
+      idTeam,
       strTeam,
       strTeamBadge,
       strDescriptionEN,
@@ -28,7 +29,7 @@ export const TeamInfo = props => {
     },
     nextEvents,
     lastEvents,
-    players,
+    players
   } = props;
 
   const teamInfo = [
@@ -85,7 +86,6 @@ export const TeamInfo = props => {
     }
   ];
 
-
   return (
     <div className="main">
       <div className="col-1">
@@ -93,7 +93,8 @@ export const TeamInfo = props => {
           <img src={strTeamBadge} height="100px" width="100px" />
         </div>
         {teamInfo.map(item => (
-          <div>{`${item.name}: ${item.object || "UNKNOWN VALUE"}`}</div>
+          <div key={idTeam}>{`${item.name}: ${item.object ||
+            "UNKNOWN VALUE"}`}</div>
         ))}
         Jersey
         <div>
@@ -116,7 +117,8 @@ export const TeamInfo = props => {
           </TabPanel>
           <TabPanel className="tabStadium">
             {stadiumInfo.map(item => (
-              <div>{`${item.name}: ${item.object || "UNKNOWN VALUE"}`}</div>
+              <div key={intFormedYear}>{`${item.name}: ${item.object ||
+                "UNKNOWN VALUE"}`}</div>
             ))}
             <div>
               <img src={strStadiumThumb} height="400px" width="800px" />
@@ -138,4 +140,3 @@ export const TeamInfo = props => {
     </div>
   );
 };
-
