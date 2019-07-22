@@ -112,10 +112,10 @@ export const TeamInfo = props => {
             <Tab>PLAYERS</Tab>
           </TabList>
 
-          <TabPanel className="tabBio">
+          <TabPanel className="tab-bio">
             <h2>{strDescriptionEN}</h2>
           </TabPanel>
-          <TabPanel className="tabStadium">
+          <TabPanel className="tab-stadium">
             {stadiumInfo.map(item => (
               <div key={intFormedYear}>{`${item.name}: ${item.object ||
                 "UNKNOWN VALUE"}`}</div>
@@ -124,10 +124,10 @@ export const TeamInfo = props => {
               <img src={strStadiumThumb} height="400px" width="800px" />
             </div>
           </TabPanel>
-          <TabPanel className="tabEvents">
+          <TabPanel className="tab-events">
             {<NextEvents events={nextEvents} />}
           </TabPanel>
-          <TabPanel className="tabEvents">
+          <TabPanel className="tab-events">
             {<LastEvents events={lastEvents} />}
           </TabPanel>
           <TabPanel className="tab-players">

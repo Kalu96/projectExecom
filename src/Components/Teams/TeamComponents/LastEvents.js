@@ -5,8 +5,9 @@ import EventInfo from "./EventInfo";
 
 const LastEvents = props => {
   const { events } = props;
+  const unknownValue = "Unknown value";
 
-  if (!events) return "UNKNOWN VALUE";
+  if (!events) return unknownValue;
   return (
     <div className="event-teams">
       {events.map(item => (
@@ -18,29 +19,26 @@ const LastEvents = props => {
             closeOnDocumentClick
           >
             <span>
-              <div>{`Event: ${item.strEvent || "UNKNOWN VALUE"}`}</div>
+              <div>{`Event: ${item.strEvent || unknownValue}`}</div>
               <div>
                 {`Result: ${item.intHomeScore ||
-                  "UNKNOWN VALUE"} : ${item.intAwayScore || "UNKNOWN VALUE"}`}
+                  unknownValue} : ${item.intAwayScore || unknownValue}`}
               </div>
-              <div>{`Round: ${item.intRound || "UNKNOWN VALUE"}`}</div>
-              <div>{`Date event: ${item.dateEvent || "UNKNOWN VALUE"}`}</div>
+              <div>{`Round: ${item.intRound || unknownValue}`}</div>
+              <div>{`Date event: ${item.dateEvent || unknownValue}`}</div>
               <div className="last-event-spectators">{`Spectators: ${item.intSpectators ||
                 "No details available"}`}</div>
               <div className="last-event-home-team">
                 <span className="home-team-span"> HOME TEAM LINE UP </span>
 
                 <div className="lineup">
-                  <div>
-                    {`${item.strHomeLineupGoalkeeper || "UNKNOWN VALUE"}`}
-                  </div>
+                  <div>{`${item.strHomeLineupGoalkeeper || unknownValue}`}</div>
                   <div> {`${item.strHomeLineupDefense || ""} `}</div>
                   <div> {`${item.strHomeLineupMidfield || ""} `}</div>
                   <div> {`${item.strHomeLineupForward || ""} `}</div>
                 </div>
                 <div className="bench">
-                  {`BENCH: ${item.strHomeLineupSubstitutes ||
-                    "UNKNOWN VALUE"} `}
+                  {`BENCH: ${item.strHomeLineupSubstitutes || unknownValue} `}
                 </div>
                 <div>
                   {`HOME GOAL DETAILS: ${item.strHomeGoalDetails || "-"} `}
@@ -53,15 +51,14 @@ const LastEvents = props => {
 
                 <div className="lineup">
                   <div>
-                    {`${item.strAwayLineupGoalkeeper || "UNKNOWN VALUE"} `}
+                    {`${item.strAwayLineupGoalkeeper || unknownValue} `}
                   </div>
                   <div> {`${item.strAwayLineupDefense || ""}`}</div>
                   <div> {`${item.strAwayLineupMidfield || ""}`}</div>
                   <div> {`${item.strAwayLineupForward || ""}`}</div>
                 </div>
                 <div className="bench">
-                  {`BENCH: ${item.strAwayLineupSubstitutes ||
-                    "UNKNOWN VALUE"} `}
+                  {`BENCH: ${item.strAwayLineupSubstitutes || unknownValue} `}
                 </div>
                 <div>
                   {`AWAY GOAL DETAILS: ${item.strAwayGoalDetails || "-"} `}
