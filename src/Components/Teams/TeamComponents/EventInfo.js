@@ -17,30 +17,37 @@ const EventInfo = props => {
 
   const lastEventsInfo = [
     {
+      id: 0,
       name: "Event",
       object: strEvent
     },
     {
+      id: 1,
       name: "Home team",
       object: strHomeTeam
     },
     {
+      id: 2,
       name: "Home score",
       object: intHomeScore
     },
     {
+      id: 3,
       name: "Away team",
       object: strAwayTeam
     },
     {
+      id: 4,
       name: "Away score",
       object: intAwayScore
     },
     {
+      id: 5,
       name: "Round",
       object: intRound
     },
     {
+      id: 6,
       name: "Date event",
       object: dateEvent
     }
@@ -50,7 +57,10 @@ const EventInfo = props => {
     <div className="event-teams">
       <div className="event-items">
         {lastEventsInfo.map(item => (
-          <div key = {item.idEvent}>{`${item.name}: ${item.object || "UNKNOWN VALUE"}`}</div>
+          <div>
+             <span key={item.id}>{`${item.name}: ${item.object ||
+            "UNKNOWN VALUE"}`}</span>
+          </div>         
         ))}
       </div>
     </div>
