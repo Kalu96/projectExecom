@@ -13,6 +13,7 @@ import TeamsInfo from "./Components/Teams/TeamsInfo";
 import OneTeamInfo from "./Components/Teams/OneTeamInfo";
 import Search from "./Components/Navigation/SearchResults";
 
+
 function App() {
   return (
     <div className="App">
@@ -34,6 +35,7 @@ function App() {
             <Route path="/TeamInfo/:id" component={OneTeamInfo} />
             <Route path="/OneTeamInfo/:id" component={OneTeamInfo} />
             <Route path="/SearchResults" component={Search} />
+
           </div>
         </div>
       </BrowserRouter>
