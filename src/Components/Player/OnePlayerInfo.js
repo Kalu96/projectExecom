@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import { PlayerInfo } from "./PlayerInfo";
 import { axiosGet } from "./PlayerHelper";
+import { Spinner } from "../Spinner/Spinner";
+
 
 class OnePlayerInfo extends React.Component {
   state = {
@@ -38,7 +40,7 @@ class OnePlayerInfo extends React.Component {
     const { playerInfo, formerClubs, contract, honors, isLoaded } = this.state;
 
     if (!isLoaded) {
-      return "LOADING...";
+      return <Spinner/>;
     }
     return (
       <ul>
