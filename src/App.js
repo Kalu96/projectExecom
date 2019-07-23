@@ -12,7 +12,6 @@ import OnePlayerInfo from "./Components/Player/OnePlayerInfo";
 import TeamsInfo from "./Components/Teams/TeamsInfo";
 import OneTeamInfo from "./Components/Teams/OneTeamInfo";
 
-
 function App() {
   return (
     <div className="App">
@@ -32,7 +31,7 @@ function App() {
             <Route path="/TeamsInfo/:id" component={TeamsInfo} exact />
             <Route path="/OnePlayerInfo/:id" component={OnePlayerInfo} exact />
             <Route path="/TeamInfo/:id" component={OneTeamInfo} />
-            <Route path="/PlayersInfo/:id" component={PlayersInfo} />
+            <Route path="/OneTeamInfo/:id" component={OneTeamInfo} />
           </div>
         </div>
       </BrowserRouter>
