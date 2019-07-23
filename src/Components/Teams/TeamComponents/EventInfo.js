@@ -50,7 +50,7 @@ const EventInfo = props => {
     <div className="event-teams">
       <div className="event-items">
         {lastEventsInfo.map(item => (
-          <div key = {idEvent}>{`${item.name}: ${item.object || "UNKNOWN VALUE"}`}</div>
+          <div key = {item.idEvent}>{`${item.name}: ${item.object || "UNKNOWN VALUE"}`}</div>
         ))}
       </div>
     </div>
