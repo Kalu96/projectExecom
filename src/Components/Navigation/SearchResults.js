@@ -15,8 +15,7 @@ class SearchResults extends React.Component {
   };
 
   componentDidMount() {
-    const search = new URLSearchParams(this.props.location.search);
-    const name = search.get("name");
+    const name = this.state.search.slice(1).split("=")[1];
     const url = this.getUrlParams().toString();
 
     axios.all(axiosGet(name)).then(res => {

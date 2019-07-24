@@ -35,7 +35,6 @@ function App() {
             <Route path="/TeamInfo/:id" component={OneTeamInfo} />
             <Route path="/OneTeamInfo/:id" component={OneTeamInfo} />
             <Route path="/SearchResults" component={Search} />
-
           </div>
         </div>
       </BrowserRouter>

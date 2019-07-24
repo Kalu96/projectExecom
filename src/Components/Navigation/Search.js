@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 class Search extends React.Component {
   state = { value: "" };
@@ -10,6 +10,7 @@ class Search extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    this.props.history.push(`/SearchResults?name=${this.state.value}`);
   };
 
   render() {
@@ -20,14 +21,10 @@ class Search extends React.Component {
         <label>
           <input type="text" value={value} onChange={this.handleChange} />
         </label>
-        <NavLink className="nav-link" to={`/SearchResults?name=${value}`} >
-          <input type="submit" value="Submit" />
-        </NavLink>
-
-        {console.log(value)}
+        <input type="submit" value="Submit" />
       </form>
     );
   }
 }
 
-export default Search;
+export default withRouter(Search);
