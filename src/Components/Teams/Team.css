@@ -31,7 +31,8 @@
 
 .event-items {
     list-style: none;
-    margin: 1% 0 2% 42%;
+    margin: 1% 0 5% 1%;
+    width: 300px;
 }
 
 .tab-players {

@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import { BrowserRouter, Router, Route, Link, Switch } from "react-router-dom";
 import League from "./League";
 import "./League.css";
 
