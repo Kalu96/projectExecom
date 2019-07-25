@@ -1,8 +1,13 @@
+.League {
+    background: gray;
+}
+
 .league-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: row;
-    border: 5px solid black;
+    flex-direction: row;
+    justify-content: space-around;
+    /* border: 5px solid black; */
     margin: 0 5%;
 }
 
@@ -10,11 +15,68 @@
     width: 200px;
     height: 200px;
     list-style: none;
-    border: 2.5px solid black;
-    margin-bottom: 5%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(97, 97, 97, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    border: 2.5px solid;
+    border-image: linear-gradient( #007236, #8dc73f);
+    margin-bottom: 15px;
+    background: linear-gradient( #8dc73f, #007236);
+}
+
+a {
+    text-decoration: none;
 }
 
 .league-item:hover {
-    color: lightgray;
+    background: antiquewhite;
+}
+
+.league-item-strleague {
+    text-decoration: none;
+    font: 24px bold;
+    margin-top: 10px;
+    color: #007236;
+}
+
+Link {
+    text-decoration: none;
+}
+
+.league-item-image {
+    margin-top: 15px;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    background: linear-gradient(180deg, rgba(239, 197, 202, 1) 0%, rgba(210, 75, 90, 1) 0%, rgba(241, 142, 153, 1) 100%);
+    margin: 40px 0 0 20px;
+}
+
+.tab-table {
+    text-align: -webkit-center;
+}
+
+.tab-list {
+    border-bottom: 2px solid black;
+    padding: 10px;
+    text-align: left;
+}
+
+.react-tabs__tab--selected {
+    background: #fff;
+    border-color: #aaa;
+    color: black;
+    border-radius: 10px;
+}
+
+.react-tabs__tab {
+    display: inline-block;
+    border: 1px solid transparent;
+    border-bottom: none;
+    bottom: -1px;
+    position: relative;
+    list-style: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border: 2px solid black;
 }

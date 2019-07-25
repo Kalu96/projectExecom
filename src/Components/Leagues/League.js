@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { NavLink, withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./League.css";
 
 class League extends React.Component {
@@ -30,22 +30,19 @@ class League extends React.Component {
     } = this.state;
 
     return (
-      <NavLink className="nav-link" to={`/TeamsInfo/${idLeague}`}>
+      <Link className="nav-link" to={`/OneLeagueInfo/${idLeague}`}>
         <li className="league-item">
-          <div>ID: {idLeague}</div>
-          <div>{strLeague}</div>
-          <NavLink className="nav-link" to={`/TeamsInfo/${idLeague}`}>
-            <div>
-              <img
-                className="nav-link-img"
-                src={strBadge}
-                height="100px"
-                width="100px"
-              />
-            </div>
-          </NavLink>
+          <div className="league-item-strleague">{strLeague}</div>
+          <div className="league-item-image">
+            <img
+              className="nav-link-img"
+              src={strBadge}
+              height="100px"
+              width="100px"
+            />
+          </div>
         </li>
-      </NavLink>
+      </Link>
     );
   }
 }

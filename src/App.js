@@ -12,6 +12,7 @@ import OnePlayerInfo from "./Components/Player/OnePlayerInfo";
 import TeamsInfo from "./Components/Teams/TeamsInfo";
 import OneTeamInfo from "./Components/Teams/OneTeamInfo";
 import Search from "./Components/Navigation/SearchResults";
+import OneLeagueInfo from "./Components/Leagues/OneLeagueInfo";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
             <Route path="/OnePlayerInfo/:id" component={OnePlayerInfo} exact />
             <Route path="/TeamInfo/:id" component={OneTeamInfo} />
             <Route path="/OneTeamInfo/:id" component={OneTeamInfo} />
+            <Route path="/OneLeagueInfo/:id" component={OneLeagueInfo} /> 
             <Route path="/SearchResults" component={Search} />
           </div>
         </div>
