@@ -11,6 +11,8 @@ import PlayersInfo from "./Components/Player/PlayersInfo";
 import OnePlayerInfo from "./Components/Player/OnePlayerInfo";
 import TeamsInfo from "./Components/Teams/TeamsInfo";
 import OneTeamInfo from "./Components/Teams/OneTeamInfo";
+import Search from "./Components/Navigation/SearchResults";
+
 
 function App() {
   return (
@@ -32,6 +34,7 @@ function App() {
             <Route path="/OnePlayerInfo/:id" component={OnePlayerInfo} exact />
             <Route path="/TeamInfo/:id" component={OneTeamInfo} />
             <Route path="/OneTeamInfo/:id" component={OneTeamInfo} />
+            <Route path="/SearchResults" component={Search} />
           </div>
         </div>
       </BrowserRouter>

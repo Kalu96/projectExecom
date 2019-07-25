@@ -1,7 +1,7 @@
 import React from "react";
-import axios from "axios";
 import "./Navigation.css";
 import { Link } from "react-router-dom";
+import Search from "./Search";
 
 const Navigation = () => {
   return (
@@ -15,9 +15,7 @@ const Navigation = () => {
       <Link className="nav-link"  to="/SportEvent">
         Sport-Event
       </Link>
-      <Link className="nav-link"  to="/Schedule">
-        Schedule
-      </Link>
+      <Search />
     </div>
   );
 };
