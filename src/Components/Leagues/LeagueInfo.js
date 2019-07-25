@@ -7,12 +7,8 @@ import LastEvents from "../Teams/TeamComponents/LastEvents";
 import NextEvents from "../Teams/TeamComponents/NextEvents";
 import LeagueTable from "./LeagueComponents/LeagueTable";
 
-class LeagueInfo extends React.Component {
-  state = {
-    selectedSeasson: null
-  };
+const LeagueInfo = (props) => {
 
-  render() {
     const {
       league: {
         idLeague,
@@ -29,7 +25,7 @@ class LeagueInfo extends React.Component {
       nextEvents,
       lastEvents,
       teams
-    } = this.props;
+    } = props;
 
     const leagueInfo = [
       {
@@ -84,7 +80,7 @@ class LeagueInfo extends React.Component {
               <h2>{strDescriptionEN}</h2>
             </TabPanel>
             <TabPanel className="tab-table">
-              {<LeagueTable table={table} />}
+              {<LeagueTable teams={table} />}
             </TabPanel>
             <TabPanel className="tab-events">
               {<LastEvents events={lastEvents} />}
@@ -101,7 +97,6 @@ class LeagueInfo extends React.Component {
         </div>
       </div>
     );
-  }
 }
 
 export default LeagueInfo;

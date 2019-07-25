@@ -2,23 +2,15 @@ import React from "react";
 import "../League.css";
 
 const LeagueTable = props => {
-  const { table } = props;
-
+  const { teams } = props;
+  const info = ["#"," ","P","W","D","L","GF","GA","GD","T"]
+  
   return (
     <table className="table">
       <tr>
-        <th>#</th>
-        <th />
-        <th>P</th>
-        <th>W</th>
-        <th>D</th>
-        <th>L</th>
-        <th>GF</th>
-        <th>GA</th>
-        <th>GD</th>
-        <th>T</th>
+        {info.map(item => <th>{item}</th>)}
       </tr>
-      {table.map((item, i) => (
+      {teams.map((item, i) => (
         <tr key={item.teamId}>
           {<th>{++i}</th>}
           {<th>{item.name}</th>}
