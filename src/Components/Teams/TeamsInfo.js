@@ -10,18 +10,17 @@ class TeamsInfo extends React.Component {
 
   componentDidMount() {
     const {
-      match: { params: {id}}
+      match: {
+        params: { id }
+      }
     } = this.props;
 
     axios
       .get(
-        `https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${
-          id
-        }`
+        `https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${id}`
       )
       .then(res => {
-        this.setState({ teamsInfo: res.data.teams }
-        );
+        this.setState({ teamsInfo: res.data.teams });
       })
       .catch(err => console.log(err));
   }

@@ -1,31 +1,29 @@
 import React from "react";
 import "../League.css";
+import TabRowItem from "./TabRowItem";
 
-const info = ["#", " ", "P", "W", "D", "L", "GF", "GA", "GD", "T"];
+const info = ["", "P", "W", "D", "L", "GF", "GA", "GD", "T"];
 
 const LeagueTable = ({ teams }) => {
+  if (teams.length === 0)
+    return <span className="unknown-value">UNKNOWN VALUE</span>;
   return (
-    <table className="table">
-      <tr>
-        {info.map(item => (
-          <th>{item}</th>
+    <div className="table-box">
+      <table className="table">
+        <tbody>
+          <tr>
+            {info.map((item, index) => (
+              <th key={index}>{item}</th>
+            ))}
+          </tr>
+        </tbody>
+        {teams.map((item, i) => (
+          <tbody key={i}>
+            <TabRowItem team={item} />
+          </tbody>
         ))}
-      </tr>
-      {teams.map((item, i) => (
-        <tr key={item.teamId}>
-          {<th>{++i}</th>}
-          {<th>{item.name}</th>}
-          {<th>{item.played}</th>}
-          {<th>{item.win}</th>}
-          {<th>{item.draw}</th>}
-          {<th>{item.loss}</th>}
-          {<th>{item.goalsfor}</th>}
-          {<th>{item.goalsagainst}</th>}
-          {<th>{item.goalsdifference}</th>}
-          {<th>{item.total}</th>}
-        </tr>
-      ))}
-    </table>
+      </table>
+    </div>
   );
 };
 

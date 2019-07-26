@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Search from "./Search";
 import { axiosGet } from "./SearchHelper";
 import Player from "../Player/Player";
 import Team from "../Teams/Team";
@@ -47,7 +46,7 @@ class SearchResults extends React.Component {
   };
 
   printPlayers = list => {
-    if (!list) return "NO PLAYERS FOUND";
+    if (!list) return <span className="unknown-value">NO PLAYERS FOUND</span>;
     const filterPlayers = list.filter(player => player.strSport === "Soccer");
 
     return filterPlayers.map(player => (
@@ -56,7 +55,7 @@ class SearchResults extends React.Component {
   };
 
   printTeams = list => {
-    if (!list) return "NO FINDED FOUND";
+    if (!list) return <span className="unknown-value">NO TEAMS FOUND</span>;
     const filterTeams = list.filter(team => team.strSport === "Soccer");
 
     return filterTeams.map(team => <Team key={team.idTeam} team={team} />);
@@ -72,13 +71,13 @@ class SearchResults extends React.Component {
     if (!isLoaded) return "Loading....";
 
     return (
-      <div>
+      <div className="search-page">
         <div>
-          <span>TEAMS</span>
+          <span className="teams-and-players">TEAMS</span>
           <ul className="player-list">{this.printTeams(searchTeamResults)}</ul>
         </div>
         <div>
-          <span>PLAYERS</span>
+          <span className="teams-and-players">PLAYERS</span>
           <ul className="player-list">
             {this.printPlayers(searchPlayerResults)}
           </ul>

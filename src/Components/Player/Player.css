@@ -6,19 +6,6 @@
     margin: 0 5%;
 }
 
-li.player-item {
-    width: 200px;
-    height: 200px;
-    list-style: none;
-    border: 2.5px solid black;
-    margin-bottom: 5%;
-    background: linear-gradient( 180deg, rgba(0, 0, 0, 1) 0%, rgba(97, 97, 97, 1) 0%, rgba(255, 255, 255, 1) 100%);
-}
-
-li.player-item:hover {
-    color: lightgray;
-}
-
 .main {
     display: flex;
     min-height: 100vh;
@@ -28,7 +15,7 @@ li.player-item:hover {
 }
 
 .col-1 {
-    background: #d7e8d4;
+    background: #a6bc36;
     flex: 2;
 }
 
@@ -36,6 +23,14 @@ li.player-item:hover {
     display: flex;
     flex-direction: column;
     flex: 6;
+    background: #1e7302;
+}
+
+ul.tab-list {
+    background: #a6bc36;
+    text-align: center;
+    font-weight: bold;
+    color: #003f1d;
 }
 
 .tabList {
@@ -53,14 +48,62 @@ li.player-item:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: row;
+    color: #d3de9b;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .former-items {
     list-style: none;
-    margin: 1% 0 2% 42%;
+    margin: 10px 0 20px 450px;
+    text-align: center;
 }
 
 .honors-items {
     list-style: none;
-    margin: 2% 0 0;
+    margin-top: 10px;
+    color: #d3de9b;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.player-contract {
+    color: #d3de9b;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.col-1 {
+    color: #003f1d;
+    font-size: 24px;
+}
+
+.img-player {
+    margin-top: 40px;
+}
+
+.map-players {
+    text-align: left;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.player-name {
+    text-decoration: none;
+    font: 24px bold;
+    margin-top: 10px;
+    color: #f5f5d6;
+}
+
+.player-img {
+    margin-top: 10px;
+}
+
+span.unknown-value {
+    font-weight: bold;
+    font-size: 24px
+}
+
+span.unknown-value-map {
+    font-size: 16px;
 }

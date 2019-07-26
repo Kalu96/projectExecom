@@ -43,8 +43,8 @@ class Leagues extends React.Component {
     );
     // 4367 and 4519 are ID-s from some undefined teams
 
-    return filterLeague.map(league => (
-      <League key={league.idLeague} league={league} />
+    return filterLeague.map((league) => (
+      <League key={+league.idLeague} league={league} />
     ));
   };
 

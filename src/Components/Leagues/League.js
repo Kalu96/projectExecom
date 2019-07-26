@@ -39,6 +39,7 @@ class League extends React.Component {
               src={strBadge}
               height="100px"
               width="100px"
+              alt="NO DATA"
             />
           </div>
         </li>

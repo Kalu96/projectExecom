@@ -11,10 +11,10 @@ class Player extends React.Component {
     return (
       <NavLink className="nav-link" to={`/OnePlayerInfo/${idPlayer}`}>
         <li className="player-item">
-          <div>{strPlayer}</div>
+          <span className="player-name">{strPlayer}</span>
 
-          <div>
-            <img src={strThumb} height="100px" width="100px" />
+          <div className="player-img">
+            <img src={strThumb} height="100px" width="100px" alt="NO DATA" />
           </div>
         </li>
       </NavLink>

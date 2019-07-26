@@ -6,16 +6,11 @@ import Search from "./Search";
 const Navigation = () => {
   return (
     <div className="main-nav-link">
-      <Link className="nav-link"  to="/Countries">
-        Countries
-      </Link>
-      <Link className="nav-link"  to="/Leagues">
-        Leagues
-      </Link>
-      <Link className="nav-link"  to="/SportEvent">
-        Sport-Event
-      </Link>
       <Search />
+      <Link className="nav-link-leagues"  to="/Leagues">
+        Leagues
+      </Link>     
+      
     </div>
   );
 };

@@ -20,6 +20,10 @@
     background: linear-gradient( #8dc73f, #007236);
 }
 
+.table-box {
+    margin-left: 350px
+}
+
 a {
     text-decoration: none;
 }
@@ -32,7 +36,7 @@ a {
     text-decoration: none;
     font: 24px bold;
     margin-top: 10px;
-    color: #007236;
+    color: #f5f5d6;
 }
 
 Link {
@@ -40,15 +44,21 @@ Link {
 }
 
 .league-item-image {
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 table,
-th,
 td {
     border: 1px solid black;
-    background: linear-gradient(180deg, rgba(239, 197, 202, 1) 0%, rgba(210, 75, 90, 1) 0%, rgba(241, 142, 153, 1) 100%);
+    background: linear-gradient( #8dc73f, #007236);
     margin: 40px 0 0 20px;
+}
+
+th {
+    border: 1px solid black;
+    background: linear-gradient( #8dc73f, #007236);
+    margin: 40px 0 0 20px;
+    padding: 7px
 }
 
 .tab-table {
@@ -78,4 +88,26 @@ td {
     padding: 6px 12px;
     cursor: pointer;
     border: 2px solid black;
+}
+
+ul.league-list {
+    margin: 10px 0;
+}
+
+.main {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    margin: 0;
+    border-style: solid;
+}
+
+.league-map {
+    text-align: left;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.league-img {
+    margin-top: 40px;
 }

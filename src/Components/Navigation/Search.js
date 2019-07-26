@@ -19,9 +19,9 @@ class Search extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          <input type="text" value={value} onChange={this.handleChange} />
+          <input className="input-field" type="text" value={value} onChange={this.handleChange} />
         </label>
-        <input type="submit" value="Submit" />
+        <input className="input-button" type="submit" value="Search" />
       </form>
     );
   }

@@ -10,29 +10,49 @@
     width: 200px;
     height: 200px;
     list-style: none;
-    border: 2.5px solid black;
-    margin-bottom: 5%;
-    background: linear-gradient( 180deg, rgba(0, 0, 0, 1) 0%, rgba(97, 97, 97, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    border: 5px solid;
+    border-image: linear-gradient( #007236, #8dc73f);
+    background: linear-gradient( #8dc73f, #007236);
+    text-decoration: none;
+    font: 24px bold;
+    margin: 10px 0 15px 0;
+    color: #f5f5d6;
 }
 
 .team-item:hover {
     color: lightgray;
 }
 
+.teamcard-img {
+    margin-top: 10px;
+}
+
 .tab-stadium {
     margin: 0 40px;
+    color: #d3de9b
 }
 
 .event-teams {
     display: flex;
     flex-wrap: wrap;
     justify-content: row;
+    color: #d3de9b;
+}
+
+.event-teams-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #d3de9b;
+    flex-direction: row;
 }
 
 .event-items {
     list-style: none;
     margin: 1% 0 5% 1%;
     width: 300px;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .tab-players {
@@ -46,13 +66,18 @@ li.player-item {
     width: 200px;
     height: 200px;
     list-style: none;
-    border: 2.5px solid black;
-    margin-bottom: 5%;
-    background: linear-gradient( 180deg, rgba(0, 0, 0, 1) 0%, rgba(97, 97, 97, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    border: 5px solid;
+    border-image: linear-gradient( #007236, #8dc73f);
+    margin-bottom: 15px;
+    background: linear-gradient( #8dc73f, #007236);
+    text-decoration: none;
+    font: 24px bold;
+    margin: 10px 0 15px 0;
+    color: #f5f5d6;
 }
 
 li.player-item:hover {
-    color: lightgray;
+    color: antiquewhite;
 }
 
 .last-event-spectators,
@@ -64,4 +89,28 @@ li.player-item:hover {
 
 .lineup {
     margin: 2% 0;
+}
+
+h2 {
+    color: #d3de9b;
+    text-align: justify;
+    padding: 0 30px;
+}
+
+div.popup-content {
+    color: black;
+}
+
+.map-team {
+    text-align: left;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.img-team {
+    margin-top: 40px
+}
+
+.img-jersey {
+    margin-top: 20px;
 }

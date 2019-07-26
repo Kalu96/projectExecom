@@ -4,7 +4,6 @@ import "../Team.css";
 const EventInfo = props => {
   const {
     lastEvents: {
-      idEvent,
       strEvent,
       strHomeTeam,
       intHomeScore,
@@ -54,13 +53,12 @@ const EventInfo = props => {
   ];
 
   return (
-    <div className="event-teams">
+    <div className="event-teams-wrap">
       <div className="event-items">
         {lastEventsInfo.map(item => (
-          <div>
-             <span key={item.id}>{`${item.name}: ${item.object ||
-            "UNKNOWN VALUE"}`}</span>
-          </div>         
+          <div key={item.id}>
+            <span>{`${item.name}: ${item.object || "UNKNOWN VALUE"}`}</span>
+          </div>
         ))}
       </div>
     </div>
