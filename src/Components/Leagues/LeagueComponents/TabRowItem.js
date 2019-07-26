@@ -52,7 +52,7 @@ const TabRowItem = (props) => {
       ];
 
     return(
-        <tr /*className="event-items"*/>
+        <tr>
         
         {teamInfo.map((item,index)=> (
           <th key={++index}>
