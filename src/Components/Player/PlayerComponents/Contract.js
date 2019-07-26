@@ -5,7 +5,7 @@ class Contract extends React.Component {
   render() {
     const { contract } = this.props;
 
-    if (!contract) return "UNKNOWN VALUE";
+    if (!contract) return  <span className="unknown-value">UNKNOWN VALUE</span>;
     else
       return (
         <div className="player-contract">

@@ -5,7 +5,7 @@ class FormerTeams extends React.Component {
   render() {
     const { teams } = this.props;
 
-    if (!teams) return "UNKNOWN VALUE";
+    if (!teams) return <span className="unknown-value">UNKNOWN VALUE</span>;
     else
       return (
         <div className="former-teams">

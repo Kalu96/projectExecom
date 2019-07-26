@@ -6,7 +6,7 @@ import EventInfo from "./EventInfo";
 const LastEvents = props => {
   const { events } = props;
 
-  if (!events) return "UNKNOWN VALUE";
+  if (!events) return <span className="unknown-value">UNKNOWN VALUE</span>;
   return (
     <div className="event-teams-wrap">
       {events.map(item => (

@@ -5,8 +5,7 @@ class Honors extends React.Component {
   render() {
     const { honors } = this.props;
 
-    if (!honors) return "UNKNOWN VALUE";
-    else
+    if (!honors) return <span className="unknown-value">UNKNOWN VALUE</span>;
       return honors.map((item, index) => {
         return (
           <div className="honors-items" key={index}>

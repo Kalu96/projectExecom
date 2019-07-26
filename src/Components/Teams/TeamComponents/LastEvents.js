@@ -7,7 +7,7 @@ const LastEvents = props => {
   const { events } = props;
   const unknownValue = "UNKNOWN VALUE";
 
-  if (!events) return unknownValue;
+  if (!events) return <span className="unknown-value">unknownValue</span>;
   return (
     <div className="event-teams-wrap">
       {events.map(item => (
