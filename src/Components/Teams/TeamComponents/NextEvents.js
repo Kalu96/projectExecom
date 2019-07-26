@@ -6,7 +6,7 @@ const NextEvents = props => {
 
   if (!events) return "UNKNOWN VALUE";
   return (
-    <div className="event-teams">
+    <div className="event-teams-wrap">
       {events.map(item => (
         <div key={item.idEvent} className="event-items">
           <div>{`Event: ${item.strEvent || "UNKNOWN VALUE"}`}</div>

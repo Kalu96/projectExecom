@@ -5,11 +5,11 @@ import EventInfo from "./EventInfo";
 
 const LastEvents = props => {
   const { events } = props;
-  const unknownValue = "Unknown value";
+  const unknownValue = "UNKNOWN VALUE";
 
   if (!events) return unknownValue;
   return (
-    <div className="event-teams">
+    <div className="event-teams-wrap">
       {events.map(item => (
         <div key={item.idEvent} className="event-items">
           <EventInfo lastEvents={item} />

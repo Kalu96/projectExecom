@@ -11,7 +11,6 @@ const LeagueInfo = (props) => {
 
     const {
       league: {
-        idLeague,
         strLeague,
         intFormedYear,
         strDescriptionEN,
@@ -58,10 +57,10 @@ const LeagueInfo = (props) => {
       <div className="main">
         <div className="col-1">
           <div>
-            <img src={strBadge} height="100px" width="100px" />
+            <img className="league-img" src={strBadge} height="220px" width="220px" alt="NO DATA" />
           </div>
-          {leagueInfo.map(item => (
-            <div key={idLeague}>{`${item.name}: ${item.object ||
+          {leagueInfo.map((item, index) => (
+            <div className="league-map" key={index}>{`${item.name}: ${item.object ||
               "UNKNOWN VALUE"}`}</div>
           ))}
         </div>

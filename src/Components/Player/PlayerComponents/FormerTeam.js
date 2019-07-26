@@ -9,13 +9,18 @@ class FormerTeams extends React.Component {
     else
       return (
         <div className="former-teams">
-          {teams.map(item => (
-            <div className="former-items">
+          {teams.map((item, index) => (
+            <div className="former-items" key={index}>
               <div>{`Team: ${item.strFormerTeam || "UNKNOWN VALUE"}`}</div>
               <div>{`Joined: ${item.strJoined || "UNKNOWN VALUE"}`}</div>
               <div>{`Deparded: ${item.strDeparted || "UNKNOWN VALUE"}`}</div>
               <div>
-                <img src={item.strTeamBadge} height="70px" width="70px" />
+                <img
+                  src={item.strTeamBadge}
+                  height="70px"
+                  width="70px"
+                  alt="NO DATA"
+                />
               </div>
             </div>
           ))}

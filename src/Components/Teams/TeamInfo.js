@@ -9,7 +9,6 @@ import Player from "../Player/Player";
 export const TeamInfo = props => {
   const {
     team: {
-      idTeam,
       strTeam,
       strTeamBadge,
       strDescriptionEN,
@@ -90,21 +89,32 @@ export const TeamInfo = props => {
     <div className="main">
       <div className="col-1">
         <div>
-          <img src={strTeamBadge} height="100px" width="100px" />
+          <img
+            className="img-team"
+            src={strTeamBadge}
+            height="220px"
+            width="220px"
+            alt="NO DATA"
+          />
         </div>
-        {teamInfo.map(item => (
-          <div key={idTeam}>{`${item.name}: ${item.object ||
+        {teamInfo.map((item, index) => (
+          <div className="map-team" key={index}>{`${item.name}: ${item.object ||
             "UNKNOWN VALUE"}`}</div>
         ))}
-        Jersey
         <div>
-          <img src={strTeamJersey} height="100px" width="100px" />
+          <img
+            className="img-jersey"
+            src={strTeamJersey}
+            height="200px"
+            width="200px"
+            alt="NO DATA"
+          />
         </div>
       </div>
 
       <div className="col-2">
         <Tabs>
-          <TabList className="tabList">
+          <TabList className="tab-list">
             <Tab>ABOUT</Tab>
             <Tab>STADIUM</Tab>
             <Tab>NEXT EVENTS</Tab>
@@ -112,16 +122,21 @@ export const TeamInfo = props => {
             <Tab>PLAYERS</Tab>
           </TabList>
 
-          <TabPanel className="tab-bio">
+          <TabPanel className="tabBio">
             <h2>{strDescriptionEN}</h2>
           </TabPanel>
           <TabPanel className="tab-stadium">
-            {stadiumInfo.map(item => (
-              <div key={intFormedYear}>{`${item.name}: ${item.object ||
-                "UNKNOWN VALUE"}`}</div>
+            {stadiumInfo.map((item, index) => (
+              <h2 key={index}>{`${item.name}: ${item.object ||
+                "UNKNOWN VALUE"}`}</h2>
             ))}
             <div>
-              <img src={strStadiumThumb} height="400px" width="800px" />
+              <img
+                src={strStadiumThumb}
+                height="400px"
+                width="800px"
+                alt="NO DATA"
+              />
             </div>
           </TabPanel>
           <TabPanel className="tab-events">

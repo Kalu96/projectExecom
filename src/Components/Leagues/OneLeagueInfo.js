@@ -3,6 +3,7 @@ import axios from "axios";
 import LeagueInfo from "./LeagueInfo";
 import { axiosGet } from "./LeagueHelper";
 import { Spinner } from "../Spinner/Spinner";
+import "./League.css"
 
 class OneLeagueInfo extends React.Component {
   state = {
@@ -24,11 +25,11 @@ class OneLeagueInfo extends React.Component {
     } = this.props;
 
     axios.all(axiosGet(id)).then(res => {
-      const leagueInfo = res[0].data.leagues[0];
-      const tableInfo = res[1].data.table;
-      const nextEventsInfo = res[2].data.events;
-      const lastEventsInfo = res[3].data.events;
-      const teamsInfo = res[4].data.teams;
+      const leagueInfo = res[0].data.leagues[0] || null;
+      const tableInfo = res[1].data.table  || [];
+      const nextEventsInfo = res[2].data.events  || null;
+      const lastEventsInfo = res[3].data.events  || null;
+      const teamsInfo = res[4].data.teams  || [];
 
       this.setState({
         leagueInfo,

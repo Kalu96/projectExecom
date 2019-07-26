@@ -1,10 +1,63 @@
-div.main-nav-link {
-    background: linear-gradient( 180deg, rgba(0, 0, 0, 1) 0%, rgba(97, 97, 97, 1) 100%, rgba(255, 255, 255, 1) 100%);
-    padding: 20px 0px;
+.main-nav-link {
+    background: linear-gradient(to right, #1d7301, #bbc73e);
     text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 80px;
+}
+
+.nav-link-leagues {
+    color: white;
+    font-size: 35px;
+    margin: 15px 40px 0 0;
 }
 
 .nav-link {
     margin-right: 20px;
     color: white;
 }
+
+form {
+    text-align: left;
+    margin-left: 30px;
+    display: inline-block;
+}
+
+input {
+    background-color: #a6bc36;
+    border: 2px solid #1d7301;
+    color: #003f1d;
+    text-transform: uppercase;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 15px 2px 0px 2px;
+    cursor: pointer;
+}
+
+.input-field {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.input-button {
+    background-color: #d3de9b;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.search-page {
+    background-size: cover;
+}
+
+.teams-and-players {
+    font-weight: 24px;
+    color: #f5f5d6;
+}
+
+ul.player-list {
+    background: #1e7302;
+}
+
+@media only screen and (max-width: 767px) {}

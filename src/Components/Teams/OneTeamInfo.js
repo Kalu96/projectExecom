@@ -24,7 +24,7 @@ class OneTeamInfo extends React.Component {
       const teamInfo = res[0].data.teams[0] || null;
       const nextFiveEvents = res[1].data.events || null;
       const lastFiveEvents = res[2].data.results || null;
-      const players = res[3].data.player || null;
+      const players = res[3].data.player || [];
 
       this.setState({
         teamInfo,

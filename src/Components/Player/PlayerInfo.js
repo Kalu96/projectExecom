@@ -87,17 +87,19 @@ export const PlayerInfo = props => {
   return (
     <div className="main">
       <div className="col-1">
-        <div>
-          <img src={strThumb} height="100px" width="100px" />
+        <div className="img-player">
+          <img src={strThumb} height="220px" width="220px" alt="NO DATA" />
         </div>
-        {playerInfo.map(item => (
-          <div>{`${item.name}: ${item.object || "UNKNOWN VALUE"}`}</div>
+        {playerInfo.map((item, index) => (
+          <div className="map-players" key={index}>{`${
+            item.name
+          }: ${item.object || "UNKNOWN VALUE"}`}</div>
         ))}
       </div>
 
       <div className="col-2">
         <Tabs>
-          <TabList className="tabList">
+          <TabList className="tab-list">
             <Tab>BIO</Tab>
             <Tab>FORMER TEAMS</Tab>
             <Tab>CONTRACT</Tab>

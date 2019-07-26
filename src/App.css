@@ -1,3 +1,6 @@
 .App {
     text-align: center;
+    background-image: url("./Images/grass-background.png");
+    background-size: contain;
+    min-height: 100vh;
 }

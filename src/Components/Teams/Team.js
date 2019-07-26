@@ -11,13 +11,15 @@ class Team extends React.Component {
     return (
       <NavLink className="nav-link" to={`/OneTeamInfo/${idTeam}`}>
         <li className="team-item">
+          <div>{strTeam}</div>
           <div>
-            <NavLink className="nav-link" to={`/OneTeamInfo/${idTeam}`}>
-              {strTeam}
-            </NavLink>
-          </div>
-          <div>
-            <img src={strTeamBadge} height="100px" width="100px" />
+            <img
+              className="teamcard-img"
+              src={strTeamBadge}
+              height="100px"
+              width="100px"
+              alt="NO DATA"
+            />
           </div>
         </li>
       </NavLink>

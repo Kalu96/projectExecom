@@ -7,9 +7,9 @@ class Honors extends React.Component {
 
     if (!honors) return "UNKNOWN VALUE";
     else
-      return honors.map(item => {
+      return honors.map((item, index) => {
         return (
-          <div className="honors-items">
+          <div className="honors-items" key={index}>
             <li>Team: {item.strTeam || "UNKNOWN VALUE"}</li>
             <li>Honor: {item.strHonour || "UNKNOWN VALUE"}</li>
             <li>Season: {item.strSeason || "UNKNOWN VALUE"}</li>
